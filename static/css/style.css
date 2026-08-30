@@ -1,0 +1,1006 @@
+/*
+=====================================================
+AI Sleep Alarm Detector
+Professional Dashboard Style Sheet
+
+Author : Tushar Vala
+=====================================================
+*/
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+
+:root {
+
+    --bg-primary: #0f172a;
+
+    --bg-secondary: #111c31;
+
+    --bg-card: #17233a;
+
+    --bg-card-hover: #1d2d48;
+
+    --border-color: #263853;
+
+    --primary: #38bdf8;
+
+    --primary-dark: #0284c7;
+
+    --success: #22c55e;
+
+    --success-dark: #16a34a;
+
+    --danger: #ef4444;
+
+    --danger-dark: #dc2626;
+
+    --warning: #f59e0b;
+
+    --text-primary: #f8fafc;
+
+    --text-secondary: #cbd5e1;
+
+    --text-muted: #94a3b8;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(56, 189, 248, 0.08),
+            transparent 30%
+        ),
+
+        var(--bg-primary);
+
+    color: var(--text-primary);
+
+    font-family: "Inter", "Poppins", sans-serif;
+
+}
+
+
+/* =====================================================
+   APPLICATION CONTAINER
+===================================================== */
+
+.app-container {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 24px 30px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.app-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 16px 0 24px;
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+
+/* =====================================================
+   BRAND SECTION
+===================================================== */
+
+.brand-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+/* =====================================================
+   SMALL PROFESSIONAL LOGO
+===================================================== */
+
+.brand-logo {
+
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =====================================================
+   BRAND CONTENT
+===================================================== */
+
+.brand-content h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    color: var(--text-primary);
+
+}
+
+
+.brand-content p {
+
+    margin-top: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   SYSTEM INDICATOR
+===================================================== */
+
+.system-indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border: 1px solid rgba(34, 197, 94, 0.25);
+
+    border-radius: 20px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow: 0 0 10px var(--success);
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+
+    padding-top: 28px;
+
+}
+
+
+/* =====================================================
+   CAMERA CARD
+===================================================== */
+
+.camera-card {
+
+    overflow: hidden;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 16px;
+
+    background: var(--bg-secondary);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+
+.section-header h2 {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.section-header p {
+
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   LIVE BADGE
+===================================================== */
+
+.live-badge {
+
+    padding: 6px 11px;
+
+    border-radius: 6px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: var(--danger);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* =====================================================
+   CAMERA CONTAINER
+===================================================== */
+
+.camera-container {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #020617;
+
+}
+
+
+/* =====================================================
+   VIDEO FEED
+===================================================== */
+
+.video-feed {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    background: #020617;
+
+}
+
+
+/* =====================================================
+   CAMERA OVERLAY
+===================================================== */
+
+.camera-overlay {
+
+    position: absolute;
+
+    top: 16px;
+
+    left: 16px;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    background: rgba(2, 6, 23, 0.75);
+
+    color: #f87171;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(6px);
+
+}
+
+
+/* =====================================================
+   STATISTICS GRID
+===================================================== */
+
+.statistics-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+
+    min-height: 105px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    background: var(--bg-card);
+
+    transition:
+
+        transform 0.25s ease,
+
+        border-color 0.25s ease,
+
+        background 0.25s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(56, 189, 248, 0.5);
+
+    background: var(--bg-card-hover);
+
+}
+
+
+/* =====================================================
+   STAT LABEL
+===================================================== */
+
+.stat-label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+/* =====================================================
+   STAT VALUE
+===================================================== */
+
+.stat-value {
+
+    display: block;
+
+    color: var(--text-primary);
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   STATUS COLORS
+===================================================== */
+
+.status-awake {
+
+    color: var(--success);
+
+}
+
+
+.status-sleep {
+
+    color: var(--danger);
+
+    animation: sleep-alert 0.8s infinite;
+
+}
+
+
+.alarm-off {
+
+    color: var(--text-muted);
+
+}
+
+
+.alarm-on {
+
+    color: var(--danger);
+
+    animation: sleep-alert 0.8s infinite;
+
+}
+
+
+.system-running {
+
+    color: var(--success);
+
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.control-panel {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 22px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    background: var(--bg-secondary);
+
+}
+
+
+/* =====================================================
+   CONTROL BUTTON
+===================================================== */
+
+.control-btn {
+
+    min-width: 180px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+
+        transform 0.2s ease,
+
+        opacity 0.2s ease,
+
+        box-shadow 0.2s ease;
+
+}
+
+
+.control-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.control-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+.control-btn:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.5;
+
+}
+
+
+/* =====================================================
+   START BUTTON
+===================================================== */
+
+.start-btn {
+
+    background: var(--success);
+
+}
+
+
+.start-btn:hover {
+
+    background: var(--success-dark);
+
+    box-shadow: 0 5px 18px rgba(34, 197, 94, 0.25);
+
+}
+
+
+/* =====================================================
+   STOP BUTTON
+===================================================== */
+
+.stop-btn {
+
+    background: var(--danger);
+
+}
+
+
+.stop-btn:hover {
+
+    background: var(--danger-dark);
+
+    box-shadow: 0 5px 18px rgba(239, 68, 68, 0.25);
+
+}
+
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+
+.reset-btn {
+
+    background: var(--primary-dark);
+
+}
+
+
+.reset-btn:hover {
+
+    background: #0369a1;
+
+    box-shadow: 0 5px 18px rgba(56, 189, 248, 0.25);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.app-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    padding: 18px 0;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+}
+
+
+.app-footer strong {
+
+    color: var(--text-secondary);
+
+}
+
+
+.app-footer span {
+
+    margin: 0 6px;
+
+    color: var(--border-color);
+
+}
+
+
+/* =====================================================
+   LOADING OVERLAY
+===================================================== */
+
+.loading-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(2, 6, 23, 0.96);
+
+    transition: opacity 0.4s ease,
+
+                visibility 0.4s ease;
+
+}
+
+
+.loading-overlay.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+.loading-box {
+
+    text-align: center;
+
+}
+
+
+.loading-box p {
+
+    margin-top: 16px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+.loader {
+
+    width: 42px;
+
+    height: 42px;
+
+    margin: auto;
+
+    border: 4px solid rgba(56, 189, 248, 0.2);
+
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: rotate 0.8s linear infinite;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes rotate {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes sleep-alert {
+
+    0% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: 0.35;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+
+    .statistics-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+    .app-container {
+
+        padding: 16px;
+
+    }
+
+
+    .app-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .brand-logo {
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .brand-content h1 {
+
+        font-size: 20px;
+
+    }
+
+
+    .brand-content p {
+
+        font-size: 11px;
+
+    }
+
+
+    .system-indicator {
+
+        align-self: flex-start;
+
+    }
+
+
+    .section-header {
+
+        padding: 15px;
+
+    }
+
+
+    .camera-container {
+
+        min-height: 260px;
+
+    }
+
+
+    .statistics-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .control-panel {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .control-btn {
+
+        width: 100%;
+
+    }
+
+
+    .app-footer {
+
+        align-items: center;
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+
+    .brand-section {
+
+        gap: 10px;
+
+    }
+
+
+    .brand-logo {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .brand-content h1 {
+
+        font-size: 17px;
+
+    }
+
+
+    .stat-value {
+
+        font-size: 21px;
+
+    }
+
+
+}
