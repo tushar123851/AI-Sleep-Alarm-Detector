@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ========================================= -->
+    <!-- META -->
+    <!-- ========================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="AI Sleep Alarm Detector using OpenCV, MediaPipe and FastAPI">
+
+    <meta name="theme-color"
+          content="#0f172a">
+
+    <title>{{ title }}</title>
+
+
+    <!-- ========================================= -->
+    <!-- FAVICON -->
+    <!-- ========================================= -->
+
+    <link rel="icon"
+          type="image/png"
+          href="/static/images/logo.png">
+
+
+    <!-- ========================================= -->
+    <!-- GOOGLE FONT -->
+    <!-- ========================================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ========================================= -->
+    <!-- CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================= -->
+    <!-- LOADING OVERLAY -->
+    <!-- ========================================= -->
+
+    <div id="loading"
+         class="loading-overlay">
+
+        <div class="loading-box">
+
+            <div class="loader"></div>
+
+            <p>
+                Initializing AI Detection System...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- APPLICATION CONTAINER -->
+    <!-- ========================================= -->
+
+    <div class="app-container">
+
+
+        <!-- ========================================= -->
+        <!-- HEADER -->
+        <!-- ========================================= -->
+
+        <header class="app-header">
+
+
+            <!-- BRAND -->
+
+            <div class="brand-section">
+
+
+                <!-- SMALL LOGO -->
+
+                <img
+                    src="/static/images/logo.png"
+                    alt="AI Sleep Alarm Detector Logo"
+                    class="brand-logo">
+
+
+                <!-- BRAND CONTENT -->
+
+                <div class="brand-content">
+
+
+                    <h1>
+                        AI Sleep Alarm Detector
+                    </h1>
+
+
+                    <p>
+                        Real-Time Sleep Detection using
+                        OpenCV, MediaPipe & FastAPI
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-indicator">
+
+
+                <span class="status-dot"></span>
+
+
+                <span>
+                    System Online
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- ========================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ========================================= -->
+            <!-- CAMERA SECTION -->
+            <!-- ========================================= -->
+
+            <section class="camera-card">
+
+
+                <!-- CAMERA HEADER -->
+
+                <div class="section-header">
+
+
+                    <div>
+
+
+                        <h2>
+                            Live Detection
+                        </h2>
+
+
+                        <p>
+                            AI-powered real-time sleep monitoring
+                        </p>
+
+
+                    </div>
+
+
+                    <span class="live-badge">
+                        ● LIVE
+                    </span>
+
+
+                </div>
+
+
+                <!-- CAMERA FEED -->
+
+                <div class="camera-container">
+
+
+                    <img
+                        id="video-feed"
+                        src="/video_feed"
+                        alt="Live Camera Feed"
+                        class="video-feed">
+
+
+                    <!-- CAMERA OVERLAY -->
+
+                    <div class="camera-overlay">
+
+
+                        <span>
+                            ● LIVE CAMERA
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- STATISTICS -->
+            <!-- ========================================= -->
+
+            <section class="statistics-grid">
+
+
+                <!-- STATUS -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        STATUS
+                    </span>
+
+
+                    <strong
+                        id="status"
+                        class="stat-value status-awake">
+
+                        AWAKE
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- EAR -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        EYE ASPECT RATIO
+                    </span>
+
+
+                    <strong
+                        id="ear"
+                        class="stat-value">
+
+                        0.000
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- BLINKS -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        BLINKS
+                    </span>
+
+
+                    <strong
+                        id="blink-count"
+                        class="stat-value">
+
+                        0
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- SLEEP EVENTS -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        SLEEP EVENTS
+                    </span>
+
+
+                    <strong
+                        id="sleep-events"
+                        class="stat-value">
+
+                        0
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- ALARM -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        ALARM
+                    </span>
+
+
+                    <strong
+                        id="alarm-status"
+                        class="stat-value alarm-off">
+
+                        OFF
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- RUNNING TIME -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        RUNNING TIME
+                    </span>
+
+
+                    <strong
+                        id="running-time"
+                        class="stat-value">
+
+                        0 sec
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- FPS -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        FPS
+                    </span>
+
+
+                    <strong
+                        id="fps"
+                        class="stat-value">
+
+                        0.0
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- SYSTEM -->
+
+                <div class="stat-card">
+
+
+                    <span class="stat-label">
+                        SYSTEM
+                    </span>
+
+
+                    <strong
+                        id="system-status"
+                        class="stat-value system-running">
+
+                        RUNNING
+
+                    </strong>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- CONTROLS -->
+            <!-- ========================================= -->
+
+            <section class="control-panel">
+
+
+                <button
+                    id="start-btn"
+                    class="control-btn start-btn"
+                    type="button">
+
+                    ▶
+                    Start Detection
+
+                </button>
+
+
+                <button
+                    id="stop-btn"
+                    class="control-btn stop-btn"
+                    type="button">
+
+                    ■
+                    Stop Detection
+
+                </button>
+
+
+                <button
+                    id="reset-btn"
+                    class="control-btn reset-btn"
+                    type="button">
+
+                    ↻
+                    Reset Statistics
+
+                </button>
+
+
+            </section>
+
+
+        </main>
+
+
+        <!-- ========================================= -->
+        <!-- FOOTER -->
+        <!-- ========================================= -->
+
+        <footer class="app-footer">
+
+
+            <p>
+
+                AI Sleep Alarm Detector
+
+                <span>•</span>
+
+                Developed by
+
+                <strong>
+                    Tushar Vala
+                </strong>
+
+
+            </p>
+
+
+            <p>
+                © 2026
+            </p>
+
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script
+        src="/static/js/dashboard.js">
+    </script>
+
+
+    <script
+        src="/static/js/camera.js">
+    </script>
+
+
+    <script
+        src="/static/js/detection.js">
+    </script>
+
+
+    <script
+        src="/static/js/alarm.js">
+    </script>
+
+
+</body>
+
+</html>
