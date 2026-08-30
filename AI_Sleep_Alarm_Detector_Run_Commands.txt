@@ -1,0 +1,228 @@
+AI SLEEP ALARM DETECTOR
+COMPLETE WINDOWS RUN COMMANDS
+
+PROJECT PATH:
+D:\rnw\AI Sleep Alarm Detector
+
+
+1. OPEN PROJECT
+
+D:
+cd "D:\rnw\AI Sleep Alarm Detector"
+
+
+2. ACTIVATE VIRTUAL ENVIRONMENT
+
+PowerShell:
+
+.env\Scripts\Activate.ps1
+
+If PowerShell blocks activation:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+
+Then:
+
+.env\Scripts\Activate.ps1
+
+
+3. VERIFY PYTHON
+
+where python
+
+python --version
+
+Expected Python:
+
+D:\rnw\AI Sleep Alarm Detector\venv\Scripts\python.exe
+
+
+4. INSTALL REQUIREMENTS
+
+python -m pip install -r requirements.txt
+
+
+5. VERIFY OPENCV
+
+python -c "import cv2; print(cv2.__version__)"
+
+Expected:
+
+4.11.0
+
+
+6. VERIFY MEDIAPIPE
+
+python -c "import mediapipe as mp; print(mp.__version__)"
+
+Expected:
+
+0.10.21
+
+
+7. RUN CAMERA TEST
+
+If the file is named test_cama.py:
+
+python test_cama.py
+
+If the file is named test_camera.py:
+
+python test_camera.py
+
+Press Q to close the camera window.
+
+
+8. RUN FACE DETECTOR TEST
+
+python test_face_detector.py
+
+
+9. RUN EYE DETECTOR TEST
+
+python test_eye_detector.py
+
+
+10. RUN SLEEP DETECTOR TEST
+
+python test_sleep_detector.py
+
+
+11. RUN LOGGER TEST
+
+python test_logger.py
+
+
+12. START WEB APPLICATION
+
+Recommended command:
+
+python -m uvicorn app:app --host 127.0.0.1 --port 8000
+
+
+13. OPEN WEBSITE
+
+http://127.0.0.1:8000
+
+
+14. API DOCUMENTATION
+
+http://127.0.0.1:8000/docs
+
+Alternative:
+
+http://127.0.0.1:8000/redoc
+
+
+15. HEALTH CHECK
+
+http://127.0.0.1:8000/health
+
+
+16. IMPORTANT API ROUTES
+
+GET  /
+GET  /video_feed
+GET  /statistics
+GET  /health
+POST /reset
+
+
+17. DEVELOPMENT MODE
+
+For automatic reload when code changes:
+
+python -m uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+
+
+18. STOP SERVER
+
+Press:
+
+CTRL + C
+
+
+19. DAILY RUN COMMANDS
+
+D:
+cd "D:\rnw\AI Sleep Alarm Detector"
+.env\Scripts\Activate.ps1
+python -m uvicorn app:app --host 127.0.0.1 --port 8000
+
+Then open:
+
+http://127.0.0.1:8000
+
+
+20. EXPECTED PROJECT STRUCTURE
+
+AI Sleep Alarm Detector
+|
+|-- app.py
+|-- requirements.txt
+|
+|-- detector
+|   |-- __init__.py
+|   |-- camera.py
+|   |-- face_detector.py
+|   |-- eye_detector.py
+|   |-- sleep_detector.py
+|   |-- alarm.py
+|
+|-- utils
+|   |-- __init__.py
+|   |-- config.py
+|   |-- logger.py
+|
+|-- templates
+|   |-- index.html
+|
+|-- static
+|   |-- css
+|   |   |-- style.css
+|   |
+|   |-- js
+|   |   |-- dashboard.js
+|   |   |-- camera.js
+|   |   |-- detection.js
+|   |   |-- alarm.js
+|   |
+|   |-- images
+|       |-- logo.png
+|
+|-- logs
+|-- models
+|
+|-- test_cama.py
+|-- test_face_detector.py
+|-- test_eye_detector.py
+|-- test_sleep_detector.py
+|-- test_logger.py
+
+
+21. FINAL COMMAND
+
+D:
+cd "D:\rnw\AI Sleep Alarm Detector"
+.env\Scripts\Activate.ps1
+python -m uvicorn app:app --host 127.0.0.1 --port 8000
+
+Open in browser:
+
+http://127.0.0.1:8000
+
+
+Your project uses:
+
+Python
+FastAPI
+Uvicorn
+OpenCV
+MediaPipe
+Pygame
+Jinja2
+HTML
+CSS
+JavaScript
+
+After confirming the local application works correctly, the next step is deployment.

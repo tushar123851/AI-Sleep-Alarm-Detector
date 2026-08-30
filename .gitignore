@@ -1,0 +1,61 @@
+# ==========================================
+# AI Sleep Alarm Detector - .gitignore
+# ==========================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+downloads/
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Model files (optional)
+models/*.pkl
+models/*.joblib
+
+# Temporary files
+*.tmp
+*.bak
+
+# Screenshots (optional)
+screenshots/*.png
+screenshots/*.jpg
